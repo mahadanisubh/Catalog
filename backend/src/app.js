@@ -14,12 +14,18 @@ app.use(cors({
   credentials: true
 }))
 app.use("/", router);
-app.listen(port, () => {
-  console.log("Connected to Server-Port ",port);
-});
+const startServer = async () => {
+  try {
+    await connectDB();
+    console.log("MongoDB connected");
 
-const startServer = () => {
-  connectDB();
+    app.listen(port, () => {
+      console.log("Server running on port", port);
+    });
+  } catch (err) {
+    console.error("Failed to start server:", err.message);
+    process.exit(1);
+  }
 };
 startServer();
 
