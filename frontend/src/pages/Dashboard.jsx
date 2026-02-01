@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   const fetchProducts = async (q = "") => {
     try {
-      const url = `http://localhost:3000/getproducts${q ? "?name=" + encodeURIComponent(q) : ""}`;
+      const url = `https://catalog-backend-7kln.onrender.com/getproducts${q ? "?name=" + encodeURIComponent(q) : ""}`;
       const res = await fetch(url);
       const data = await res.json();
       if (!res.ok) {
