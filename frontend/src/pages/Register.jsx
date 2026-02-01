@@ -24,7 +24,7 @@ const handleSubmit = async (e) => {
     return;
   }
   try{
-  const response = await fetch(`http://localhost:3000/createuser`,{
+  const response = await fetch(`https://catalog-backend-xuvr.onrender.com/createuser`,{
     method: "POST",
     headers: {
       "Content-type": "application/json",
