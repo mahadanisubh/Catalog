@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 
   const fetchUploaded = async () => {
     try {
-      const res = await fetch("https://catalog-backend-7kln.onrender.com/getuploadedproducts", {
+      const res = await fetch("http://localhost:3000/getuploadedproducts", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -56,7 +56,7 @@ const AdminDashboard = () => {
 
 
     try {
-      const res = await fetch("https://catalog-backend-7kln.onrender.com/createproduct", {
+      const res = await fetch("http://localhost:3000/createproduct", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: fd,
