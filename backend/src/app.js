@@ -15,7 +15,7 @@ app.use(cors({
 }))
 app.use("/", router);
 app.listen(port, () => {
-  console.log("Connected to Server-Port 3000 ");
+  console.log("Connected to Server-Port ",port);
 });
 
 const startServer = () => {
